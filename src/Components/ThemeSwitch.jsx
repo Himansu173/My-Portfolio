@@ -8,11 +8,11 @@ const ThemeSwitch = (props) => {
         Component,
         slots,
         isSelected,
-        getBaseProps,
         getInputProps,
         getWrapperProps
     } = useSwitch(props);
     const [mounted, setMounted] = useState(false)
+    // eslint-disable-next-line no-unused-vars
     const { theme, setTheme } = useTheme()
 
     useEffect(() => {
@@ -21,19 +21,20 @@ const ThemeSwitch = (props) => {
 
     if (!mounted) return null
 
-    if(isSelected){
+    if (isSelected) {
         setTheme('light');
-    }else{
+    } else {
         setTheme('dark');
     }
 
     return (
         <div className="flex flex-col gap-2">
-            <Component {...getBaseProps()}>
+            <Component>
                 <VisuallyHidden>
                     <input {...getInputProps()} />
                 </VisuallyHidden>
                 <div
+                    style={{ cursor: 'pointer' }}
                     {...getWrapperProps()}
                     className={slots.wrapper({
                         class: [
