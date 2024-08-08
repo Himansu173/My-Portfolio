@@ -9,30 +9,24 @@ export default function NavBar() {
   const menuItems = [
     "Home",
     "About",
+    "Skills",
     "Projects",
     "Education",
     "Contact"
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand>
+        <NavbarBrand className="gap-x-3">
           <p className="font-bold text-inherit">HIMANSU</p>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        {/* {menuItems.map((item, index) => (
-          <NavbarItem key={`${item}-${index}`}>
-            <Link href="#" color="foreground">
-              {item}
-            </Link>
-          </NavbarItem>
-        ))} */}
         <Tabs size="lg" color="secondary" aria-label="Tabs sizes">
           {menuItems.map((item) => (
             <Tab key={item} title={item} />
@@ -48,9 +42,7 @@ export default function NavBar() {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
+              color={"foreground"}
               className="w-full"
               href="#"
               size="lg"
