@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React from 'react'
-import { HeroHighlight, Highlight } from "./ui/hero-highlight";
+import { HeroHighlight } from "./ui/hero-highlight";
 import { Button, Image } from "@nextui-org/react";
 import profileImage from '../assets/portfolio-image.png'
 import { FlipWords } from "./ui/flip-words";
@@ -9,12 +9,12 @@ export function Home() {
     const words = ["Web Developer", "Frontend Developer", "Fullstack Developer", "Java Developer"];
 
     return (
-        <HeroHighlight containerClassName="h-[90vh] items-center" className="w-[100vw] h-full">
+        <HeroHighlight containerClassName="h-[90vh] overflow-hidden items-center" className="w-[100vw] h-full">
             <div className="flex items-center sm:justify-around justify-center h-[90vh]">
                 <div>
-                    <p className="md:text-3xl sm:text-1xl font-medium text-xl">Hello, It's Me</p>
+                    <p className="md:text-3xl sm:text-1xl font-medium text-xl">Hello, It&apos;s Me</p>
                     <p className="md:text-5xl md:font-semibold sm:text-4xl text-4xl py-2 text-violet-700">Himansu Sekhar Lenka</p>
-                    <p className="md:text-4xl font-semibold sm:text-2xl text-2xl mt-2">and I'm a<FlipWords words={words} /></p>
+                    <p className="md:text-4xl font-semibold sm:text-2xl text-2xl mt-2">and I&apos;m a<FlipWords words={words} /></p>
                     <div className="mt-6 flex :items-center gap-x-5 sm:justify-start justify-center">
                         <Button isIconOnly onPress={() => window.open("https://www.linkedin.com/in/himansu173/", '_blank')} color="secondary" variant="faded" >
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28px" height="28px" viewBox="0,0,255.99452,255.99452">
