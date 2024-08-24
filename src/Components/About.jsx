@@ -5,22 +5,24 @@ import { Card, CardHeader, Divider, Image } from "@nextui-org/react";
 
 function About() {
     const words = [
-        // {
-        //     text: "Who",
-        // },
         {
-            text: "About",
+            text: "Who",
         },
         {
-            text: "Me.",
+            text: "Am",
+        },
+        {
+            text: "I",
             className: "text-violet-700 dark:text-violet-700",
         },
     ];
 
     return (
-        <div className="h-[100vh] w-full dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center sm:justify-around justify-center">
+        <>
+            {/* <div className="h-[100vh] w-full dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center sm:justify-around justify-center"> */}
+            <div className="h-[100vh] w-full relative flex items-center sm:justify-around justify-center">
             {/* Radial gradient for the container to give a faded look */}
-            <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+            {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
             <CardContainer className="inter-var sm:block hidden">
                 <CardBody className="bg-transparent relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[20rem] h-auto rounded-xl p-6 border  ">
                     <CardItem translateZ="100" className="w-full my-2">
@@ -43,7 +45,8 @@ function About() {
                 <Divider />
                 <p className="px-3 py-2 text-xs lg:text-base">Beyond my technical pursuits, I enjoy exploring new technologies, playing chess, and hiking. I am committed to continuous learning and always seek opportunities to grow both personally and professionally. My goal is to build a successful career as a Full Stack Developer and expand my experience across different industries.</p>
             </Card>
-        </div>
+            </div>
+        </>
     )
 }
 

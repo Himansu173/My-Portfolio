@@ -9,9 +9,9 @@ export default function NavBar() {
   const menuItems = [
     "Home",
     "About",
-    "Skills",
-    "Projects",
     "Education",
+    "Projects",
+    "Skills",
     "Contact"
   ];
 
