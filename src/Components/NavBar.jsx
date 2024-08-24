@@ -1,10 +1,12 @@
-import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/react";
 import ThemeSwitchBtn from "./ThemeSwitch";
 import { Tabs, Tab } from "@nextui-org/react";
+import { scroller } from 'react-scroll';
+import PropTypes from 'prop-types'
+import { useState } from "react";
 
-export default function NavBar() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+export default function NavBar({ activeSection, setActiveSection, disableObserverTemporarily }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
     "Home",
@@ -12,22 +14,42 @@ export default function NavBar() {
     "Education",
     "Projects",
     "Skills",
-    "Contact"
+    "Contact",
   ];
 
+  const handleScroll = (to) => {
+    disableObserverTemporarily();
+    setActiveSection(to)
+    scroller.scrollTo(to, {
+      smooth: true,
+      duration: 500,
+      offset: to == "Home" ? -70 : 0,
+    });
+
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll>
+    <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand className="gap-x-3">
-          <p className="font-bold text-inherit">HIMANSU</p>
+          <p className="font-bold text-inherit sm:tracking-widest tracking-wide">HIMANSU.</p>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <Tabs size="lg" color="secondary" aria-label="Tabs sizes">
+        <Tabs
+          size="lg"
+          color="secondary"
+          aria-label="Tabs sizes"
+          selectedKey={activeSection}
+          onSelectionChange={(key) => handleScroll(key)}
+        >
           {menuItems.map((item) => (
             <Tab key={item} title={item} />
           ))}
@@ -41,17 +63,34 @@ export default function NavBar() {
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={"foreground"}
+            <button
               className="w-full"
-              href="#"
-              size="lg"
+              onClick={() => handleScroll(item)}
             >
               {item}
-            </Link>
+            </button>
           </NavbarMenuItem>
         ))}
+        {/* <Tabs
+          size="md"
+          color="secondary"
+          aria-label="Tabs sizes"
+          isVertical={true}
+          variant={"light"}
+          selectedKey={activeSection}
+          onSelectionChange={(key) => { handleScroll(key) }}
+        >
+          {menuItems.map((item) => (
+            <Tab key={item} title={item} />
+          ))}
+        </Tabs> */}
       </NavbarMenu>
     </Navbar>
   );
+}
+
+NavBar.propTypes = {
+  activeSection: PropTypes.any,
+  setActiveSection: PropTypes.any,
+  disableObserverTemporarily: PropTypes.any,
 }

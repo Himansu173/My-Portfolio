@@ -1,19 +1,64 @@
-import About from "./Components/About"
-import Home from "./Components/Home"
-import NavBar from "./Components/NavBar"
-import { HeroHighlight } from "./Components/ui/hero-highlight"
+import About from "./Components/About";
+import Education from "./Components/Education";
+import Home from "./Components/Home";
+import NavBar from "./Components/NavBar";
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [activeSection, setActiveSection] = useState("Home");
+  const [isObserverActive, setIsObserverActive] = useState(true);
+
+  useEffect(() => {
+    if (!isObserverActive) return;
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.6,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, options);
+
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, [isObserverActive]);
+
+  const disableObserverTemporarily = () => {
+    setIsObserverActive(false);
+    setTimeout(() => {
+      setIsObserverActive(true);
+    }, 600);
+  };
+
 
   return (
     <>
-      <NavBar />
-      <HeroHighlight containerClassName="h-[91vh] bg-fixed items-center" className="w-[100vw] h-full">
+      <NavBar activeSection={activeSection} setActiveSection={setActiveSection} disableObserverTemporarily={disableObserverTemporarily} />
+      <section id="Home">
         <Home />
+      </section>
+      <section id="About">
         <About />
-      </HeroHighlight>
+      </section>
+      <section id="Education">
+        <Education />
+      </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

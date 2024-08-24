@@ -61,7 +61,7 @@ export const FlipWords = ({
           className
         )}
         key={currentWord}
-      >
+      >        
         {currentWord.split("").map((letter, index) => (
           <motion.span
             key={currentWord + index}
