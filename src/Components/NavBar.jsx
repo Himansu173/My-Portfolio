@@ -24,7 +24,7 @@ export default function NavBar({ activeSection, setActiveSection, disableObserve
     scroller.scrollTo(to, {
       smooth: true,
       duration: 500,
-      offset: to == "Home" ? -70 : 0,
+      offset: -57,
     });
 
     if (isMenuOpen) {

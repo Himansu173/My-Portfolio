@@ -1,59 +1,97 @@
 import { HeroHighlight } from "./ui/hero-highlight";
-import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
-import { Image, Link } from "@nextui-org/react";
+import { Meteors } from "./ui/meteors";
+import { Card, CardHeader, CardBody, CardFooter, Divider, Link } from "@nextui-org/react";
 
 function Education() {
   return (
-    <HeroHighlight containerClassName="overflow-hidden items-center" className="w-[100vw] h-full">
-      <div>
-        <p className="text-4xl font-semibold w-full text-center">Education</p>
-        <p className="w-full text-center">My schooling and higher education</p>
+    <HeroHighlight containerClassName="h-auto">
+      <div className="my-6" >
+        <p className="md:text-4xl text-2xl font-semibold w-full text-center">Education</p>
+        <p className="w-full text-center md:text-xl text-sm">My schooling and higher education</p>
       </div>
-      
-      <CardContainer className="inter-var">
-        <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
-          <CardItem
-            translateZ="50"
-            className="text-xl font-bold text-neutral-600 dark:text-white"
-          >
-            Make things float in air
-          </CardItem>
-          <CardItem
-            as="p"
-            translateZ="60"
-            className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-          >
-            Hover over this card to unleash the power of CSS perspective
-          </CardItem>
-          <CardItem translateZ="100" className="w-full mt-4">
-            <Image
-              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              height="1000"
-              width="1000"
-              className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-              alt="thumbnail"
-            />
-          </CardItem>
-          <div className="flex justify-between items-center mt-20">
-            <CardItem
-              translateZ={20}
-              as={Link}
-              href="https://twitter.com/mannupaaji"
-              target="__blank"
-              className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+      <div className="flex flex-wrap gap-10 justify-center items-center my-10">
+        <Card className="md:w-[408px] sm:w-[80vw] w-[90vw]" data-aos="zoom-in" data-aos-duration="800">
+          <CardHeader className="flex gap-3">
+            <svg fill="#d4d4d4" className="lg:h-12 h-10" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.535 31.535" xmlSpace="preserve"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M31.535,13.503V11.1h-3.154V9.441L15.767,0.679L3.154,9.441V11.1H0v2.404h4.224V25.04H0.986L0,30.856h31.535l-0.986-5.816 h-3.238V13.503H31.535z M15.768,4.246c1.113,0,2.015,0.903,2.015,2.017c0,1.113-0.902,2.016-2.015,2.016 c-1.114,0-2.018-0.903-2.018-2.016C13.75,5.148,14.654,4.246,15.768,4.246z M10.688,25.04H7.916V13.503h2.772V25.04z M17.153,25.04 h-2.771V13.503h2.771V25.04z M23.619,25.04h-2.771V13.503h2.771V25.04z"></path> </g> </g></svg>
+            <div className="flex flex-col">
+              <p className="lg:text-2xl text-lg font-semibold tracking-wider">M.C.A</p>
+              <p className="lg:text-lg text-sm text-default-500 tracking-wide">Post Graduation</p>
+            </div>
+          </CardHeader>
+          <Divider />
+          <CardBody> 
+            <p className="lg:text-2xl text-lg font-medium tracking-wide">Silicon Institute of Technology Bhubaneswar, Odisha</p>
+            <p className="lg:text-lg text-sm text-default-500">2023 - Present</p>
+            <p className="lg:text-lg text-sm text-default-500">CGPA - 9.17</p>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <Link
+              isExternal
+              showAnchorIcon
+              href="https://silicon.ac.in/bbsr-home/master-in-computer-applications/"
+              className="lg:text-base text-sm"
             >
-              Try now →
-            </CardItem>
-            <CardItem
-              translateZ={20}
-              as="button"
-              className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+              More About Cource And Institute
+            </Link>
+          </CardFooter>
+          <Meteors number={20} />
+        </Card>
+        <Card className="md:w-[408px] sm:w-[80vw] w-[90vw]" data-aos="zoom-in" data-aos-duration="800">
+          <CardHeader className="flex gap-3">
+            <svg fill="#d4d4d4" className="lg:h-12 h-10" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.535 31.535" xmlSpace="preserve"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M31.535,13.503V11.1h-3.154V9.441L15.767,0.679L3.154,9.441V11.1H0v2.404h4.224V25.04H0.986L0,30.856h31.535l-0.986-5.816 h-3.238V13.503H31.535z M15.768,4.246c1.113,0,2.015,0.903,2.015,2.017c0,1.113-0.902,2.016-2.015,2.016 c-1.114,0-2.018-0.903-2.018-2.016C13.75,5.148,14.654,4.246,15.768,4.246z M10.688,25.04H7.916V13.503h2.772V25.04z M17.153,25.04 h-2.771V13.503h2.771V25.04z M23.619,25.04h-2.771V13.503h2.771V25.04z"></path> </g> </g></svg>
+            <div className="flex flex-col">
+              <p className="lg:text-2xl text-lg font-semibold tracking-wider">B.Sc ITM</p>
+              <p className="lg:text-lg text-sm text-default-500 tracking-wide">Graduation</p>
+            </div>
+          </CardHeader>
+          <Divider />
+          <CardBody>
+            <p className="lg:text-2xl text-lg font-medium tracking-wide">B.J.B Autonomous College Bhubaneswar, Odisha</p>
+            <p className="lg:text-lg text-sm text-default-500 tracking-wide">2020 - 2023</p>
+            <p className="lg:text-lg text-sm text-default-500 tracking-wide">Percentage - 82.16</p>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <Link
+              isExternal
+              showAnchorIcon
+              href="https://bjbcollege.in/self-financing-ppp-mode-bsc-itm/"
+              className="lg:text-base text-sm"
             >
-              Sign up
-            </CardItem>
-          </div>
-        </CardBody>
-      </CardContainer>
+              More About Cource And Institute
+            </Link>
+          </CardFooter>
+          <Meteors number={20} />
+        </Card>
+        <Card className="md:w-[408px] sm:w-[80vw] w-[90vw]" data-aos="zoom-in" data-aos-duration="800">
+          <CardHeader className="flex gap-3">
+            <svg fill="#d4d4d4" className="lg:h-12 h-10" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.535 31.535" xmlSpace="preserve"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M31.535,13.503V11.1h-3.154V9.441L15.767,0.679L3.154,9.441V11.1H0v2.404h4.224V25.04H0.986L0,30.856h31.535l-0.986-5.816 h-3.238V13.503H31.535z M15.768,4.246c1.113,0,2.015,0.903,2.015,2.017c0,1.113-0.902,2.016-2.015,2.016 c-1.114,0-2.018-0.903-2.018-2.016C13.75,5.148,14.654,4.246,15.768,4.246z M10.688,25.04H7.916V13.503h2.772V25.04z M17.153,25.04 h-2.771V13.503h2.771V25.04z M23.619,25.04h-2.771V13.503h2.771V25.04z"></path> </g> </g></svg>
+            <div className="flex flex-col">
+              <p className="lg:text-2xl text-lg font-semibold tracking-widest">XII</p>
+              <p className="lg:text-lg text-sm text-default-500 tracking-wide">Higher Secondary</p>
+            </div>
+          </CardHeader>
+          <Divider />
+          <CardBody>
+            <p className="lg:text-2xl text-lg font-medium tracking-wide">Jupiter Science Higher Secondary School Bhubaneswar, Odisha</p>
+            <p className="lg:text-lg text-sm text-default-500 tracking-wide">2018 - 2020</p>
+            <p className="lg:text-lg text-sm text-default-500 tracking-wide">Percentage - 70.00</p>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <Link
+              isExternal
+              showAnchorIcon
+              href="https://jupiterplus2.in/"
+              className="lg:text-base text-sm"
+            >
+              More About Cource And Institute
+            </Link>
+          </CardFooter>
+          <Meteors number={20} />
+        </Card>
+      </div>
     </HeroHighlight>
   )
 }

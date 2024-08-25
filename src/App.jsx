@@ -3,10 +3,16 @@ import Education from "./Components/Education";
 import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
 import { useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
   const [activeSection, setActiveSection] = useState("Home");
   const [isObserverActive, setIsObserverActive] = useState(true);
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
 
   useEffect(() => {
     if (!isObserverActive) return;

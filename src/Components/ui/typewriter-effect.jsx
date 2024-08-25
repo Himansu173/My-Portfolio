@@ -34,6 +34,7 @@ export const TypewriterEffect = ({
         }
       );
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   const renderWords = () => {
@@ -64,7 +65,7 @@ export const TypewriterEffect = ({
   return (
     <div
       className={cn(
-        "text-lg sm:text-xl md:text-4xl lg:text-4xl font-bold text-center",
+        "text-lg sm:text-2xl md:text-4xl lg:text-4xl font-bold text-center",
         className
       )}
     >
@@ -111,7 +112,7 @@ export const TypewriterEffectSmooth = ({
               {word.text.map((char, index) => (
                 <span
                   key={`char-${index}`}
-                  className={cn(`dark:text-white text-black `, word.className)}
+                  className={cn( word.className)}
                 >
                   {char}
                 </span>
@@ -135,13 +136,13 @@ export const TypewriterEffectSmooth = ({
           width: "fit-content",
         }}
         transition={{
-          duration: 1.1,
+          duration: 1,
           ease: "linear",
           delay: 0.5,
         }}
       >
         <div
-          className="text-lg sm:text-base md:text-4xl lg:text-4xl font-bold"
+          className="text-xl sm:text-2xl md:text-4xl font-bold"
           style={{
             whiteSpace: "nowrap",
           }}
@@ -163,7 +164,7 @@ export const TypewriterEffectSmooth = ({
           repeatType: "reverse",
         }}
         className={cn(
-          "block rounded-sm w-[4px] h-4 md:h-9 lg:h-9 bg-violet-700",
+          "block rounded-sm w-[4px] h-6 md:h-9 bg-violet-700",
           cursorClassName
         )}
       ></motion.span>
