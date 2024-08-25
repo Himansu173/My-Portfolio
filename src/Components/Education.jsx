@@ -1,13 +1,33 @@
+import { HeroHighlight } from "./ui/hero-highlight";
+import { Meteors } from "./ui/meteors";
 
 function Education() {
   return (
-    <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
-      {/* Radial gradient for the container to give a faded look */}
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-      <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
-        Backgrounds
-      </p>
-    </div>
+    <HeroHighlight containerClassName="h-[90vh] overflow-hidden items-center" className="w-[100vw] h-full">
+      <div className="h-full flex justify-center items-center">
+        <div className=" w-full relative max-w-xs">
+          <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
+          <div className="relative shadow-xl bg-gray-900 border border-gray-800  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
+
+            <h1 className="font-bold text-xl text-white mb-4 relative z-50">
+              Meteors because they&apos;re cool
+            </h1>
+
+            <p className="font-normal text-base text-slate-500 mb-4 relative z-50">
+              I don&apos;t know what to write so I&apos;ll just paste something
+              cool here. One more sentence because lorem ipsum is just
+              unacceptable. Won&apos;t ChatGPT the shit out of this.
+            </p>
+
+            <button className="border px-4 py-1 rounded-lg  border-gray-500 text-gray-300">
+              Explore
+            </button>
+
+            <Meteors number={20} />
+          </div>
+        </div>
+      </div>
+    </HeroHighlight>
   )
 }
 

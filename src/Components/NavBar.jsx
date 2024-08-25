@@ -1,4 +1,4 @@
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu } from "@nextui-org/react";
 import ThemeSwitchBtn from "./ThemeSwitch";
 import { Tabs, Tab } from "@nextui-org/react";
 import { scroller } from 'react-scroll';
@@ -14,6 +14,7 @@ export default function NavBar({ activeSection, setActiveSection, disableObserve
     "Education",
     "Projects",
     "Skills",
+    "Achievement",
     "Contact",
   ];
 
@@ -27,24 +28,27 @@ export default function NavBar({ activeSection, setActiveSection, disableObserve
     });
 
     if (isMenuOpen) {
-      setIsMenuOpen(false);
+      setTimeout(()=>{
+        setIsMenuOpen(false);
+      },400)
     }
   };
 
   return (
-    <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+    <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} height="3.3rem">
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
+          className="md:hidden"
         />
         <NavbarBrand className="gap-x-3">
           <p className="font-bold text-inherit sm:tracking-widest tracking-wide">HIMANSU.</p>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden md:flex gap-4" justify="center">
         <Tabs
           size="lg"
+          className="lg:size-lg"
           color="secondary"
           aria-label="Tabs sizes"
           selectedKey={activeSection}
@@ -61,7 +65,7 @@ export default function NavBar({ activeSection, setActiveSection, disableObserve
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
-        {menuItems.map((item, index) => (
+        {/* {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <button
               className="w-full"
@@ -70,8 +74,8 @@ export default function NavBar({ activeSection, setActiveSection, disableObserve
               {item}
             </button>
           </NavbarMenuItem>
-        ))}
-        {/* <Tabs
+        ))} */}
+        <Tabs
           size="md"
           color="secondary"
           aria-label="Tabs sizes"
@@ -79,11 +83,14 @@ export default function NavBar({ activeSection, setActiveSection, disableObserve
           variant={"light"}
           selectedKey={activeSection}
           onSelectionChange={(key) => { handleScroll(key) }}
+          fullWidth
         >
           {menuItems.map((item) => (
-            <Tab key={item} title={item} />
+            // <NavbarMenuItem key={item}>
+              <Tab key={item} title={item} />
+            // </NavbarMenuItem>
           ))}
-        </Tabs> */}
+        </Tabs>
       </NavbarMenu>
     </Navbar>
   );
