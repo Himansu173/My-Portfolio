@@ -28,21 +28,21 @@ export default function NavBar({ activeSection, setActiveSection, disableObserve
     });
 
     if (isMenuOpen) {
-      setTimeout(()=>{
+      setTimeout(() => {
         setIsMenuOpen(false);
-      },400)
+      }, 400)
     }
   };
 
   return (
-    <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} height="3.3rem">
+    <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} height="3.6rem">
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="md:hidden"
         />
         <NavbarBrand className="gap-x-3">
-          <p className="font-bold text-inherit sm:tracking-widest tracking-wide">HIMANSU.</p>
+          <p className="font-bold text-inherit sm:tracking-widest tracking-wide cursor-pointer" onClick={() => handleScroll("Home")}>HIMANSU.</p>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden md:flex gap-4" justify="center">
@@ -87,7 +87,7 @@ export default function NavBar({ activeSection, setActiveSection, disableObserve
         >
           {menuItems.map((item) => (
             // <NavbarMenuItem key={item}>
-              <Tab key={item} title={item} />
+            <Tab key={item} title={item} />
             // </NavbarMenuItem>
           ))}
         </Tabs>

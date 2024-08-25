@@ -5,7 +5,8 @@ import { FlipWords } from "./ui/flip-words";
 import { Fade } from "react-awesome-reveal";
 
 export default function Home() {
-    const words = ["MERN Developer","Web Developer", "Frontend Developer", "Fullstack Developer", "Java Developer"];
+
+    const words = ["MERN Developer", "Web Developer", "Frontend Developer", "Fullstack Developer", "Java Developer"];
 
     return (
         <HeroHighlight containerClassName="h-[90.6vh] overflow-hidden items-center" className="w-[100vw] h-full">
@@ -15,7 +16,7 @@ export default function Home() {
                         <p className="md:text-3xl sm:text-1xl font-medium text-xl">Hello, It&apos;s Me</p>
                     </Fade>
                     <Fade duration={1000} direction={"down"}>
-                        <p className="md:text-5xl md:font-semibold text-4xl py-2  sm:text-violet-700">Himansu Sekhar Lenka</p>
+                        <p className="md:text-5xl md:font-semibold text-4xl py-2  md:text-violet-700">Himansu Sekhar Lenka</p>
                     </Fade>
                     <Fade duration={1000} direction={"up"}>
                         <div className="md:text-4xl font-semibold sm:text-2xl text-2xl mt-2">and I&apos;m a<FlipWords words={words} /></div>

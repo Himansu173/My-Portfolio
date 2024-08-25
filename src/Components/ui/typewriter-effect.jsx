@@ -1,18 +1,12 @@
+/* eslint-disable react/prop-types */
 import { cn } from "../lib/utils";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 export const TypewriterEffect = ({
   words,
   className,
-  cursorClassName,
-}: {
-  words: {
-    text: string;
-    className?: string;
-  }[];
-  className?: string;
-  cursorClassName?: string;
+  cursorClassName
 }) => {
   // split text inside of words into array of characters
   const wordsArray = words.map((word) => {
@@ -70,7 +64,7 @@ export const TypewriterEffect = ({
   return (
     <div
       className={cn(
-        "text-lg sm:text-xl md:text-3xl lg:text-5xl font-bold text-center",
+        "text-lg sm:text-xl md:text-4xl lg:text-4xl font-bold text-center",
         className
       )}
     >
@@ -88,7 +82,7 @@ export const TypewriterEffect = ({
           repeatType: "reverse",
         }}
         className={cn(
-          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-violet-700",
+          "inline-block rounded-sm w-[4px] h-4 md:h-9 lg:h-9 bg-violet-700",
           cursorClassName
         )}
       ></motion.span>
@@ -99,14 +93,7 @@ export const TypewriterEffect = ({
 export const TypewriterEffectSmooth = ({
   words,
   className,
-  cursorClassName,
-}: {
-  words: {
-    text: string;
-    className?: string;
-  }[];
-  className?: string;
-  cursorClassName?: string;
+  cursorClassName
 }) => {
   // split text inside of words into array of characters
   const wordsArray = words.map((word) => {
@@ -154,7 +141,7 @@ export const TypewriterEffectSmooth = ({
         }}
       >
         <div
-          className="text-lg sm:text-base md:text-3xl lg:text-5xl font-bold"
+          className="text-lg sm:text-base md:text-4xl lg:text-4xl font-bold"
           style={{
             whiteSpace: "nowrap",
           }}
@@ -176,7 +163,7 @@ export const TypewriterEffectSmooth = ({
           repeatType: "reverse",
         }}
         className={cn(
-          "block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-violet-700",
+          "block rounded-sm w-[4px] h-4 md:h-9 lg:h-9 bg-violet-700",
           cursorClassName
         )}
       ></motion.span>
