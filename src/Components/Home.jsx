@@ -18,9 +18,9 @@ export default function Home() {
     };
 
     return (
-        <HeroHighlight containerClassName="h-[90.6vh] overflow-hidden items-center" className="w-[100vw] h-full">
-            <div className="sm:static relative flex items-center sm:justify-around justify-center h-[90vh]">
-                <div className="z-20 md:static absolute">
+        <HeroHighlight containerClassName="sm:h-[90.6vh] h-[80vh] overflow-hidden" className="w-[100vw] h-full">
+            <div className="sm:static relative flex items-center overflow-hidden sm:justify-around justify-center sm:h-[90.6vh] h-[80vh]">
+                <div className="z-20 md:static absolute bottom-20">
                     <Fade duration={1000} direction={"down"} >
                         <p className="md:text-3xl sm:text-1xl font-medium text-xl">Hello, It&apos;s Me</p>
                     </Fade>
@@ -69,19 +69,19 @@ export default function Home() {
                             </Tooltip>
                         </div>
                     </Fade>
-                    <Fade duration={1000} direction={"up"} delay={300}>
+                    <Fade duration={1000} direction={"up"} className="w-full md:block flex justify-center" delay={300}>
                         <Button
                             onClick={downloadResume}
                             borderRadius="0.75rem"
                             duration="2500"
-                            containerClassName="h-13 my-5 rounded-xl"
-                            className="bg-white dark:bg-slate-900 text-black h-12 dark:text-white border-neutral-100 dark:border-slate-800 text-base"
+                            containerClassName="md:h-12 h-10 my-5 w-auto rounded-xl"
+                            className="bg-white dark:bg-slate-900 text-black px-4 dark:text-white border-neutral-100 dark:border-slate-800 md:text-base text-sm md:h-11 h-9"
                         >
                             Download Resume
                         </Button>
                     </Fade>
                 </div>
-                <Image src={profileImage} className="lg:h-[90vh] h-[90.6vh] top-1" style={{ filter: 'drop-shadow(0 0 0.7rem #6d28d9)' }} />
+                <Image src={profileImage} className="sm:h-[90vh] h-[80vh] lg:top-1" style={{ filter: 'drop-shadow(0 0 0.5rem #6d28d9)' }} />
             </div>
         </HeroHighlight>
     );

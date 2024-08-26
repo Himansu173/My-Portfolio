@@ -21,11 +21,11 @@ function About() {
     return (
         // <HeroHighlight containerClassName="h-[90vh] overflow-hidden items-center" className="w-[100vw] h-full">
         <div className="h-auto dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center md:justify-around justify-center">
-            <div className="h-auto py-12 w-full relative flex items-center md:justify-around justify-center">
+            <div className="h-auto sm:py-12 py-8 w-full relative flex items-center md:justify-around justify-center">
                 {/* Radial gradient for the container to give a faded look */}
                 <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
                 <CardContainer containerClassName="py-0" className="inter-var md:block hidden">
-                    <CardBody className="bg-transparent relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] md:w-[18rem] h-auto rounded-xl p-6 border  ">
+                    <CardBody className="bg-transparent relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] md:w-[18rem] h-auto rounded-xl p-6 border">
                         <CardItem translateZ="100" className="w-full my-2">
                             <Fade duration={3000}>
                             <Image
@@ -39,7 +39,7 @@ function About() {
                     </CardBody>
                 </CardContainer>
                 <Card className="md:max-w-[45vw] max-w-[95vw] bg-transparent shadow-none">
-                    <CardHeader className="flex p-0 lg:h-10 lg:mb-5">
+                    <CardHeader className="flex p-0 h-10 sm:mb-5 mb-2">
                         <TypewriterEffectSmooth words={words} />
                     </CardHeader>
                     {/* <Fade direction={"up"} duration={1000} > */}
