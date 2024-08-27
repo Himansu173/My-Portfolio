@@ -39,13 +39,13 @@ export default function NavBar({ activeSection, setActiveSection, disableObserve
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="md:hidden"
+          className="min-[827px]:hidden"
         />
         <NavbarBrand className="gap-x-3">
-          <p className="font-bold text-inherit sm:tracking-widest tracking-wide cursor-pointer" onClick={() => handleScroll("Home")}>HIMANSU.</p>
+          <p className="font-bold text-lg sm:tracking-wider tracking-wide cursor-pointer" onClick={() => handleScroll("Home")}>HIMANSU.</p>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden md:flex gap-4" justify="center">
+      <NavbarContent className="hidden min-[827px]:flex gap-4" justify="center">
         <Tabs
           size="lg"
           className="lg:size-lg"

@@ -73,8 +73,8 @@ export default function Home() {
                         <Button
                             onClick={downloadResume}
                             borderRadius="0.75rem"
-                            duration="2500"
-                            containerClassName="md:h-12 h-10 my-5 w-auto rounded-xl"
+                            duration="2700"
+                            containerClassName="md:h-12 h-10 my-5 xl:pr-0.5 w-auto rounded-xl"
                             className="bg-white dark:bg-slate-900 text-black px-4 dark:text-white border-neutral-100 dark:border-slate-800 md:text-base text-sm md:h-11 h-9"
                         >
                             Download Resume

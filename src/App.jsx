@@ -1,8 +1,10 @@
+import { useEffect, useState } from 'react';
 import About from "./Components/About";
 import Education from "./Components/Education";
 import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
-import { useEffect, useState } from 'react';
+import Projects from "./Components/Projects";
+import Skills from "./Components/Skills";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -12,7 +14,7 @@ function App() {
 
   useEffect(() => {
     AOS.init();
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (!isObserverActive) return;
@@ -25,7 +27,7 @@ function App() {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && entry.target.id !== "Projects") {
           setActiveSection(entry.target.id);
         }
       });
@@ -33,13 +35,47 @@ function App() {
 
     const sections = document.querySelectorAll("section");
     sections.forEach((section) => {
-      observer.observe(section);
+      if (section.id !== "Projects") {
+        observer.observe(section);
+      }
     });
 
     return () => {
       sections.forEach((section) => {
-        observer.unobserve(section);
+        if (section.id !== "Projects") {
+          observer.unobserve(section);
+        }
       });
+    };
+  }, [isObserverActive]);
+
+  useEffect(() => {
+    if (!isObserverActive) return;
+
+    const projectsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection("Projects");
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.3,
+      }
+    );
+
+    const projectsSection = document.getElementById("Projects");
+    if (projectsSection) {
+      projectsObserver.observe(projectsSection);
+    }
+
+    return () => {
+      if (projectsSection) {
+        projectsObserver.unobserve(projectsSection);
+      }
     };
   }, [isObserverActive]);
 
@@ -49,7 +85,6 @@ function App() {
       setIsObserverActive(true);
     }, 600);
   };
-
 
   return (
     <>
@@ -62,6 +97,12 @@ function App() {
       </section>
       <section id="Education">
         <Education />
+      </section>
+      <section id="Projects">
+        <Projects />
+      </section>
+      <section id="Skills">
+        <Skills />
       </section>
     </>
   );
