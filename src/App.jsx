@@ -4,9 +4,10 @@ import Education from "./Components/Education";
 import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
 import Projects from "./Components/Projects";
-import Skills from "./Components/Skills";
+// import Skills from "./Components/Skills";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Achievement from './Components/Achievement';
 
 function App() {
   const [activeSection, setActiveSection] = useState("Home");
@@ -101,8 +102,11 @@ function App() {
       <section id="Projects">
         <Projects />
       </section>
-      <section id="Skills">
+      {/* <section id="Skills">
         <Skills />
+      </section> */}
+      <section id="Achievement">
+        <Achievement />
       </section>
     </>
   );
