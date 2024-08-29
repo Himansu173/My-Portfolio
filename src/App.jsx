@@ -8,6 +8,7 @@ import Skills from "./Components/Skills";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Achievement from './Components/Achievement';
+import Contact from './Components/Contact';
 
 function App() {
   const [activeSection, setActiveSection] = useState("Home");
@@ -107,6 +108,9 @@ function App() {
       </section>
       <section id="Achievement">
         <Achievement />
+      </section>
+      <section id="Contact">
+        <Contact />
       </section>
     </>
   );

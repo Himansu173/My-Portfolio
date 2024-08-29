@@ -32,11 +32,11 @@ export default function Skills() {
                 {skills.map((skill, index) => (
                     <div key={index} className="flex flex-col items-center text-center" data-aos="flip-right" data-aos-duration="800">
                         <div className="text-6xl mb-2">{skill.icon}</div>
-                        <p className="text-lg">{skill.name}</p>
+                        <p className="lg:text-base text-sm text-default-500 tracking-wide ">{skill.name}</p>
                         <div className="mt-2 w-[120px]">
-                            <div className="w-full bg-gray-200 w-[120px] rounded-full h-2 dark:bg-gray-700">
+                            <div className="w-full bg-gray-300 w-[120px] rounded-full h-2 dark:bg-gray-700">
                                 <div
-                                    className="bg-neutral-300 h-2 rounded-full"
+                                    className="dark:bg-neutral-300 bg-neutral-800 h-2 rounded-full"
                                     style={{ width: `${skill.percentage}%` }}
                                 ></div>
                             </div>
