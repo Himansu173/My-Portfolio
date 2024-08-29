@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* CSS for notification message of mail sending */
+@media only screen and (max-width: 640px) {
+    .Toastify__toast {
+        font-size: 14px;
+        padding: 10px;
+        min-height: 47px;
+    }
+
+    .Toastify__toast-body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .Toastify__close-button {
+        width: 22px;
+        height: 22px;
+    }
+}

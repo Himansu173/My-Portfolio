@@ -6,7 +6,7 @@ export default function Achievement() {
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
             <div className="relative z-20 pt-5 w-full h-auto">
                 <div>
-                    <p className="md:text-4xl text-2xl font-semibold w-full text-center">Achivements</p>
+                    <p className="md:text-4xl text-2xl font-semibold w-full text-center">Achievement</p>
                     <p className="w-full text-center md:text-xl text-sm font-normal mt-1.5">Some of my achievements. Check my <a href="https://www.hackerrank.com/profile/himansu173" target="blank" className="md:text-xl text-sm font-normal text-blue-600">HackerRank</a> skill badges and certificates.</p>
                 </div>
                 <div className="w-full flex flex-wrap gap-x-4 gap-y-6 justify-evenly align-center sm:py-16 py-10">

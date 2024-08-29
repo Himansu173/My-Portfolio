@@ -21,15 +21,17 @@ function App() {
   useEffect(() => {
     if (!isObserverActive) return;
 
+    const isMobile = window.innerWidth <= 640;
+    const thresholdValue = isMobile ? 0.4 : 0.6;
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.6,
+      threshold: thresholdValue,
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.target.id !== "Projects") {
+        if (entry.isIntersecting && entry.target.id !== "Projects" && entry.target.id !== "Achievement") {
           setActiveSection(entry.target.id);
         }
       });
@@ -37,14 +39,14 @@ function App() {
 
     const sections = document.querySelectorAll("section");
     sections.forEach((section) => {
-      if (section.id !== "Projects") {
+      if (section.id !== "Projects" || section.id !== "Achievement") {
         observer.observe(section);
       }
     });
 
     return () => {
       sections.forEach((section) => {
-        if (section.id !== "Projects") {
+        if (section.id !== "Projects" || section.id !== "Achievement") {
           observer.unobserve(section);
         }
       });
@@ -53,6 +55,42 @@ function App() {
 
   useEffect(() => {
     if (!isObserverActive) return;
+
+    const isMobile = window.innerWidth <= 640;
+    const thresholdValue = isMobile ? 0.6 : 0.9;
+
+    const projectsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection("Achievement");
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: thresholdValue,
+      }
+    );
+
+    const achievementSection = document.getElementById("Achievement");
+    if (achievementSection) {
+      projectsObserver.observe(achievementSection);
+    }
+
+    return () => {
+      if (achievementSection) {
+        projectsObserver.unobserve(achievementSection);
+      }
+    };
+  }, [isObserverActive]);
+
+  useEffect(() => {
+    if (!isObserverActive) return;
+
+    const isMobile = window.innerWidth <= 640;
+    const thresholdValue = isMobile ? 0.1 : 0.3;
 
     const projectsObserver = new IntersectionObserver(
       (entries) => {
@@ -65,7 +103,7 @@ function App() {
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.3,
+        threshold: thresholdValue,
       }
     );
 
