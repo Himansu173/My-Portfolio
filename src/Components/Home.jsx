@@ -18,8 +18,8 @@ export default function Home() {
     };
 
     return (
-        <HeroHighlight containerClassName="sm:h-[90.6vh] h-[80vh] overflow-hidden" className="w-[100vw] h-full">
-            <div className="sm:static relative flex items-center overflow-hidden sm:justify-around justify-center sm:h-[90.6vh] h-[80vh]">
+        <HeroHighlight containerClassName="sm:h-[90.6vh] h-[83vh] overflow-hidden" className="w-[100vw] h-full">
+            <div className="sm:static relative flex md:items-center items-end sm:justify-around justify-center sm:h-[90.6vh] h-[82vh] p-0 m-0">
                 <div className="z-20 md:static absolute bottom-20">
                     <Fade duration={1000} direction={"down"} >
                         <p className="md:text-3xl sm:text-1xl font-medium text-xl">Hello, It&apos;s Me</p>
@@ -81,7 +81,7 @@ export default function Home() {
                         </Button>
                     </Fade>
                 </div>
-                <Image src={profileImage} className="sm:h-[90vh] h-[80vh] lg:top-1" style={{ filter: 'drop-shadow(0 0 0.5rem #6d28d9)' }} />
+                <Image src={profileImage} className="sm:h-[90vh] h-[83vh] sm:top-1 top-3" style={{ filter: 'drop-shadow(0 0 0.5rem #6d28d9)' }} />
             </div>
         </HeroHighlight>
     );
