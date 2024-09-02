@@ -103,7 +103,7 @@ export default function Projects() {
                                     translateZ="60"
                                     className="lg:text-base text-sm text-default-500 tracking-wide mt-2"
                                 >
-                                    A platform that connects event-related service providers with customers, by creating a mobile interface that facilitates easy connections between users and nearby service providers.
+                                    It connects event-related service providers with customers, by creating a mobile interface that facilitates easy connections between users and nearby service providers.
                                 </CardItem>
                                 <CardItem
                                     as="p"

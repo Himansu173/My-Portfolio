@@ -18,20 +18,20 @@ export default function Home() {
     };
 
     return (
-        <HeroHighlight containerClassName="sm:h-[90.6vh] h-[83vh] overflow-hidden" className="w-[100vw] h-full">
-            <div className="sm:static relative flex md:items-center items-end sm:justify-around justify-center sm:h-[90.6vh] h-[82vh] p-0 m-0">
-                <div className="z-20 md:static absolute bottom-20">
+        <HeroHighlight containerClassName="lg:h-[90.6vh] h-[83vh] overflow-hidden" className="w-[100vw] h-full">
+            <div className="sm:static relative flex min-[852px]:items-center items-end min-[852px]:justify-around justify-center sm:h-[90.6vh] h-[82vh] p-0 m-0">
+                <div className="z-20 min-[852px]:static absolute bottom-20">
                     <Fade duration={1000} direction={"down"} >
-                        <p className="md:text-3xl sm:text-1xl font-medium text-xl">Hello, It&apos;s Me</p>
+                        <p className="min-[852px]:text-3xl sm:text-1xl font-medium text-xl">Hello, It&apos;s Me</p>
                     </Fade>
                     <Fade duration={1000} direction={"down"}>
-                        <p className="md:text-5xl md:font-semibold lg:tracking-wide text-4xl py-2  md:text-violet-700">Himansu Sekhar Lenka</p>
+                        <p className="min-[852px]:text-5xl min-[852px]:font-semibold lg:tracking-wide text-4xl py-2  min-[852px]:text-violet-700">Himansu Sekhar Lenka</p>
                     </Fade>
                     <Fade duration={1000} direction={"up"}>
-                        <div className="md:text-4xl font-semibold sm:text-2xl text-2xl mt-2">and I&apos;m a<FlipWords words={words} /></div>
+                        <div className="min-[852px]:text-4xl font-semibold sm:text-2xl text-2xl mt-2">and I&apos;m a<FlipWords words={words} /></div>
                     </Fade>
                     <Fade duration={1000} direction={"up"} delay={300}>
-                        <div className="mt-6 flex :items-center gap-x-5 md:justify-start justify-center">
+                        <div className="mt-6 flex :items-center gap-x-5 min-[852px]:justify-start justify-center">
                             <Tooltip color={"secondary"} placement={"buttom"} content="https://www.linkedin.com/in/himansu173">
                                 <NormalBtn isIconOnly onPress={() => window.open("https://www.linkedin.com/in/himansu173/", '_blank')} variant="faded" >
                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28px" height="28px" viewBox="0,0,255.99452,255.99452">
@@ -69,19 +69,19 @@ export default function Home() {
                             </Tooltip>
                         </div>
                     </Fade>
-                    <Fade duration={1000} direction={"up"} className="w-full md:block flex justify-center" delay={300}>
+                    <Fade duration={1000} direction={"up"} className="w-full min-[852px]:block flex justify-center" delay={300}>
                         <Button
                             onClick={downloadResume}
                             borderRadius="0.75rem"
                             duration="2700"
-                            containerClassName="md:h-12 h-10 my-5 xl:pr-0.5 w-auto rounded-xl"
-                            className="bg-white dark:bg-slate-900 text-black px-4 dark:text-white border-neutral-100 dark:border-slate-800 md:text-base text-sm md:h-11 h-9"
+                            containerClassName="min-[852px]:h-12 h-10 my-5 xl:pr-0.5 w-auto rounded-xl"
+                            className="bg-white dark:bg-slate-900 text-black px-4 dark:text-white border-neutral-100 dark:border-slate-800 min-[852px]:text-base text-sm min-[852px]:h-11 h-9"
                         >
                             Download Resume
                         </Button>
                     </Fade>
                 </div>
-                <Image src={profileImage} className="sm:h-[90vh] h-[83vh] sm:top-1 top-3" style={{ filter: 'drop-shadow(0 0 0.5rem #6d28d9)' }} />
+                <Image src={profileImage} className="lg:h-[90vh] h-[83vh] sm:top-1 top-3" style={{ filter: 'drop-shadow(0 0 0.5rem #6d28d9)' }} />
             </div>
         </HeroHighlight>
     );
