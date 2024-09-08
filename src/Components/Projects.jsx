@@ -136,7 +136,7 @@ export default function Projects() {
                                     translateZ="50"
                                     className="lg:text-2xl text-lg font-semibold tracking-wider"
                                 >
-                                    Fintract
+                                    Fintrack
                                 </CardItem>
                                 <CardItem
                                     as="p"

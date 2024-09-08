@@ -19,7 +19,6 @@ function About() {
     ];
 
     return (
-        // <HeroHighlight containerClassName="h-[90vh] overflow-hidden items-center" className="w-[100vw] h-full">
         <div className="h-auto dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center md:justify-around justify-center">
             <div className="h-auto sm:py-12 py-8 w-full relative flex items-center md:justify-around justify-center">
                 {/* Radial gradient for the container to give a faded look */}
@@ -42,18 +41,15 @@ function About() {
                     <CardHeader className="flex p-0 h-10 sm:mb-5 mb-2">
                         <TypewriterEffectSmooth words={words} />
                     </CardHeader>
-                    {/* <Fade direction={"up"} duration={1000} > */}
                     <Divider data-aos="fade-up" data-aos-duration="1000" />
                     <p data-aos="fade-up" data-aos-duration="1000" className="px-3 py-2 text-sm sm:text-lg md:text-sm lg:text-base ">Hi, I&apos;m Himansu Sekhar Lenka, a passionate Fullstack Developer with a strong foundation in programming and problem-solving. I specialize in the MERN stack and have hands-on experience with a variety of technologies and tools. I am currently pursuing my Master&apos;s in Computer Application from Silicon Institute of Technology, Bhubaneswar, with a stellar CGPA of 9.17.</p>
                     <Divider data-aos="fade-up" data-aos-duration="1000" />
-                    <p data-aos="fade-up" data-aos-duration="1000" className="px-3 py-2 text-sm sm:text-lg md:text-sm lg:text-base ">During my internship as a Software Engineer at Juvenilia Technology, I worked on building an Online Assessment web application, Collaborating with a team of developers, I honed my skills in AngularJS, Spring Boot, and MongoDB through practical, real-time development.</p>
+                    <p data-aos="fade-up" data-aos-duration="1000" className="px-3 py-2 text-sm sm:text-lg md:text-sm lg:text-base ">During my internship as a Software Engineer at Juvenilia Technology, I Worked with the full-stack development team for building an Online Assessment web application Collaborated with a team of developers to troubleshoot and debug real-time issues and gain hands-on experience in real-time development.</p>
                     <Divider data-aos="fade-up" data-aos-duration="1000" />
                     <p data-aos="fade-up" data-aos-duration="1000" className="px-3 py-2 text-sm sm:text-lg md:text-sm lg:text-base ">Beyond my technical pursuits, I enjoy exploring new technologies, playing chess, and hiking. I am committed to continuous learning and always seek opportunities to grow both personally and professionally. My goal is to build a successful career as a Full Stack Developer and expand my experience across different industries.</p>
-                    {/* </Fade> */}
                 </Card>
             </div>
         </div>
-        // </HeroHighlight>
     )
 }
 
