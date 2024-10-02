@@ -18,14 +18,20 @@ export default function Home() {
     };
 
     return (
-        <HeroHighlight containerClassName="lg:h-[90.6vh] h-[83vh] overflow-hidden" className="w-[100vw] h-full">
-            <div className="sm:static relative flex min-[852px]:items-center items-end min-[852px]:justify-around justify-center sm:h-[90.6vh] h-[82vh] p-0 m-0">
-                <div className="z-20 min-[852px]:static absolute bottom-20">
+        <HeroHighlight containerClassName="max-[640px]:h-auto overflow-hidden" className="w-[100vw]">
+            <div className="relative flex flex-wrap sm:items-center justify-around sm:h-[90.6vh] h-[90vh] p-0 m-0">
+                <div className="w-[300px] sm:hidden block mt-10 rounded-full h-[300px] w-[300px] relative max-w-full">
+                    <div className="absolute inset-0 rounded-full h-[300px] w-[300px] bg-violet-700 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
+                    <div className="relative bg-white dark:bg-gray-900 overflow-hidden px-9 pt-1 rounded-full h-[300px] w-[300px] border-1 border-violet-700">
+                        <Image src={profileImage} />
+                    </div>
+                </div>
+                <div className="my-6 max-[640px]:m-auto">
                     <Fade duration={1000} direction={"down"} >
                         <p className="min-[852px]:text-3xl sm:text-1xl font-medium text-xl">Hello, It&apos;s Me</p>
                     </Fade>
                     <Fade duration={1000} direction={"down"}>
-                        <p className="min-[852px]:text-5xl min-[852px]:font-semibold lg:tracking-wide text-4xl py-2  min-[852px]:text-violet-700">Himansu Sekhar Lenka</p>
+                        <p className="min-[852px]:text-5xl min-[852px]:font-semibold lg:tracking-wide text-4xl py-2 text-violet-700">Himansu Sekhar Lenka</p>
                     </Fade>
                     <Fade duration={1000} direction={"up"}>
                         <div className="min-[852px]:text-4xl font-semibold sm:text-2xl text-2xl mt-2">and I&apos;m a<FlipWords words={words} /></div>
@@ -75,14 +81,18 @@ export default function Home() {
                             borderRadius="0.75rem"
                             duration="2700"
                             containerClassName="min-[852px]:h-12 h-10 my-5 xl:pr-0.5 w-auto rounded-xl"
-                            className="bg-white dark:bg-slate-900 text-black px-4 dark:text-white border-neutral-100 dark:border-slate-800 min-[852px]:text-base text-sm min-[852px]:h-11 h-9"
+                            className="bg-white dark:bg-slate-900 text-black px-4 dark:text-white border-neutral-100 dark:border-slate-800 min-[852px]:text-base text-sm min-[852px]:h-11 h-9 w-[170px]"
                         >
                             Download Resume
                         </Button>
                     </Fade>
                 </div>
-                <Image src={profileImage} className="lg:h-[90vh] h-[83vh] sm:top-1 top-3" style={{ filter: 'drop-shadow(0 0 0.5rem #6d28d9)' }} />
+                <Image src={profileImage} className="lg:h-[600px] md:h-[500px] sm:h-[400pxvh] top-1 sm:block hidden" style={{ filter: 'drop-shadow(0 0 0.5rem #6d28d9)' }} />
             </div>
         </HeroHighlight>
     );
 }
+
+
+
+
