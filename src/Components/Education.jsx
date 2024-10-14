@@ -15,7 +15,7 @@ function Education() {
           <CardHeader className="flex gap-3">
             <FaUniversity className="lg:text-5xl text-4xl" />
             <div className="flex flex-col">
-              <p className="lg:text-2xl text-lg font-semibold tracking-wider">M.C.A</p>
+              <p className="lg:text-2xl text-lg font-semibold tracking-wider">MCA</p>
               <p className="lg:text-lg text-sm text-default-500 tracking-wide">Post Graduation</p>
             </div>
           </CardHeader>
@@ -42,7 +42,7 @@ function Education() {
           <CardHeader className="flex gap-3">
             <FaUniversity className="lg:text-5xl text-4xl" />
             <div className="flex flex-col">
-              <p className="lg:text-2xl text-lg font-semibold tracking-wider">B.Sc ITM</p>
+              <p className="lg:text-2xl text-lg font-semibold tracking-wider">B.Sc. ITM</p>
               <p className="lg:text-lg text-sm text-default-500 tracking-wide">Graduation</p>
             </div>
           </CardHeader>
